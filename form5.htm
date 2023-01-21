@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script language="Javascript">
+           
+            function doichu()
+            {
+                var chu=document.f1.t1.value
+                document.f1.t1.value=chu.toUpperCase()
+            }
+        </script>
+    </head>
+    <body>
+        <form name=f1 action="xulidoimau.jsp" method="">
+            <input type=text name=t1 value="" onblur="doichu()">
+            <!--onClick tren chinh doi tuong button t1-->
+            
+        </form>
+    </body>
+</html>
+<!--roi khoi 1 mot phan tu ten form goi la onBlur-->

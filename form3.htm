@@ -1,0 +1,813 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0043)http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186 -->
+<html lang="en-US" class="js no-touch cssanimations csstransitions mdl-js"><div id="twoseven-scripts" data-info="Scripts added by TwoSeven extension" style="display: none !important; position: static !important; top: 0px !important; left: 0px !important; width: 0px !important; height: 0px !important;"><script type="text/javascript" id="__tmpScript-978291173" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-605347440" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-248528882" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-621873882" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-879865915" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-689685798" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-204962300" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-135266262" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-301903528" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-227481405" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-250862981" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-128667992" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-649667117" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-938741143" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-358661538" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-729669936" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-197677114" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-40892065" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-773874495" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-481197204" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-858800101" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-500279203" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-715565314" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-280261330" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-28074975" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-525239441" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-322010257" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-261692832" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-951255308" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-669461500" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-231339977" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-801554842" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-509246165" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-675384389" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-124939822" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-533903865" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-303343159" data-added-by-two-seven="1">(function() {
+        
+      const modal = document.querySelector('.twoseven-ext-tab-media-modal')
+      const modalCloseBtn = modal.querySelector('.close')
+      function closeModal () {
+        modal.style.display = 'none'
+        const frame = document.querySelector('#twoseven-ext-tab-media-iframe').contentWindow
+        frame.postMessage({
+          __evt_name: 'modal-hide'
+        }, '*')
+      }
+      modalCloseBtn.onclick = closeModal
+
+      window.onmessage = function (e) {
+        if (e.data.__evt_name === 'modal-hide') {
+          closeModal()
+        }
+      }
+
+      window.twoseven.closeTabMediaModal = closeModal
+
+      window.onclick = function (e) {
+        if (e.target.id === 'twoseven-ext-tab-media-modal' && modal.style.display === 'block') {
+            closeModal()
+        }
+      }
+    ;
+      })();</script></div><head id="Head"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Trường Đại học Bách khoa - Đại học Đà Nẵng &gt; KhoaCNTT &gt; TintucDs
+</title><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"><link href="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/default.css" type="text/css" rel="stylesheet"><link href="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/admin.css" type="text/css" rel="stylesheet"><link href="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/module.css" type="text/css" rel="stylesheet"><link href="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/module(1).css" type="text/css" rel="stylesheet"><link href="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/module(2).css" type="text/css" rel="stylesheet"><link href="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/module(3).css" type="text/css" rel="stylesheet"><link href="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/skin.css" type="text/css" rel="stylesheet"><script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery.js" type="text/javascript"></script><script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery-ui.js" type="text/javascript"></script><link href="http://dynamic.vdc.vn/KhoaCNTT/Tintucds/gid/186" rel="canonical"><style type="text/css" data-styled-components="FiaaB gTcftA caPIRE" data-styled-components-is-local="true">
+/* sc-component-id: sc-keyframes-FiaaB */
+@-webkit-keyframes FiaaB{100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes FiaaB{100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}
+/* sc-component-id: sc-keyframes-gTcftA */
+@-webkit-keyframes gTcftA{10%,90%{-webkit-transform:translate3d(-1px,0,0);-ms-transform:translate3d(-1px,0,0);transform:translate3d(-1px,0,0);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-4px,0,0);-ms-transform:translate3d(-4px,0,0);transform:translate3d(-4px,0,0);}40%,60%{-webkit-transform:translate3d(4px,0,0);-ms-transform:translate3d(4px,0,0);transform:translate3d(4px,0,0);}}@keyframes gTcftA{10%,90%{-webkit-transform:translate3d(-1px,0,0);-ms-transform:translate3d(-1px,0,0);transform:translate3d(-1px,0,0);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-4px,0,0);-ms-transform:translate3d(-4px,0,0);transform:translate3d(-4px,0,0);}40%,60%{-webkit-transform:translate3d(4px,0,0);-ms-transform:translate3d(4px,0,0);transform:translate3d(4px,0,0);}}
+/* sc-component-id: sc-keyframes-caPIRE */
+@-webkit-keyframes caPIRE{0%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}20%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}40%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}60%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}80%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}100%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}}@keyframes caPIRE{0%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}20%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}40%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}60%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}80%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}100%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}}</style><style>@-webkit-keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}100%{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}100%{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}100%{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.875em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.875em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}100%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}100%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}100%{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}100%{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}body.swal2-toast-shown .swal2-container{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-shown{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}body.swal2-toast-column .swal2-toast{flex-direction:column;align-items:stretch}body.swal2-toast-column .swal2-toast .swal2-actions{flex:1;align-self:stretch;height:2.2em;margin-top:.3125em}body.swal2-toast-column .swal2-toast .swal2-loading{justify-content:center}body.swal2-toast-column .swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}body.swal2-toast-column .swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast{flex-direction:row;align-items:center;width:auto;padding:.625em;box-shadow:0 0 .625em #d9d9d9;overflow-y:hidden}.swal2-popup.swal2-toast .swal2-header{flex-direction:row}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:initial;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;font-size:1em}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0}.swal2-popup.swal2-toast .swal2-icon-text{font-size:2em;font-weight:700;line-height:1em}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{height:auto;margin:0 .3125em}.swal2-popup.swal2-toast .swal2-styled{margin:0 .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 .0625em #fff,0 0 0 .125em rgba(50,100,150,.4)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:2em;height:2.8125em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.25em;left:-.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:2em 2em;transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;-webkit-transform-origin:0 2em;transform-origin:0 2em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:showSweetToast .5s;animation:showSweetToast .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:hideSweetToast .2s forwards;animation:hideSweetToast .2s forwards}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:animate-toast-success-tip .75s;animation:animate-toast-success-tip .75s}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:animate-toast-success-long .75s;animation:animate-toast-success-long .75s}@-webkit-keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotateZ(2deg);transform:translateY(-.625em) rotateZ(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotateZ(-2deg);transform:translateY(0) rotateZ(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotateZ(2deg);transform:translateY(.3125em) rotateZ(2deg);opacity:.7}100%{-webkit-transform:translateY(0) rotateZ(0);transform:translateY(0) rotateZ(0);opacity:1}}@keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotateZ(2deg);transform:translateY(-.625em) rotateZ(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotateZ(-2deg);transform:translateY(0) rotateZ(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotateZ(2deg);transform:translateY(.3125em) rotateZ(2deg);opacity:.7}100%{-webkit-transform:translateY(0) rotateZ(0);transform:translateY(0) rotateZ(0);opacity:1}}@-webkit-keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}100%{-webkit-transform:rotateZ(1deg);transform:rotateZ(1deg);opacity:0}}@keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}100%{-webkit-transform:rotateZ(1deg);transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-shown{top:auto;right:auto;bottom:auto;left:auto;background-color:transparent}body.swal2-no-backdrop .swal2-shown>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-shown.swal2-top{top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-top-left,body.swal2-no-backdrop .swal2-shown.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-top-end,body.swal2-no-backdrop .swal2-shown.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-shown.swal2-center{top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-left,body.swal2-no-backdrop .swal2-shown.swal2-center-start{top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-end,body.swal2-no-backdrop .swal2-shown.swal2-center-right{top:50%;right:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom{bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom-left,body.swal2-no-backdrop .swal2-shown.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-bottom-end,body.swal2-no-backdrop .swal2-shown.swal2-bottom-right{right:0;bottom:0}.swal2-container{display:flex;position:fixed;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:10px;background-color:transparent;z-index:1060;overflow-x:hidden;-webkit-overflow-scrolling:touch}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-container .swal2-modal{margin:0!important}}.swal2-container.swal2-fade{transition:background-color .1s}.swal2-container.swal2-shown{background-color:rgba(0,0,0,.4)}.swal2-popup{display:none;position:relative;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border-radius:.3125em;background:#fff;font-family:inherit;font-size:1rem;box-sizing:border-box}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-popup .swal2-header{display:flex;flex-direction:column;align-items:center}.swal2-popup .swal2-title{display:block;position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-popup .swal2-actions{flex-wrap:wrap;align-items:center;justify-content:center;margin:1.25em auto 0;z-index:1}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm{width:2.5em;height:2.5em;margin:.46875em;padding:0;border:.25em solid transparent;border-radius:100%;border-color:transparent;background-color:transparent!important;color:transparent;cursor:default;box-sizing:border-box;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel{margin-right:30px;margin-left:30px}.swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after{display:inline-block;width:15px;height:15px;margin-left:5px;border:3px solid #999;border-radius:50%;border-right-color:transparent;box-shadow:1px 1px 1px #fff;content:'';-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal}.swal2-popup .swal2-styled{margin:.3125em;padding:.625em 2em;font-weight:500;box-shadow:none}.swal2-popup .swal2-styled:not([disabled]){cursor:pointer}.swal2-popup .swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#3085d6;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#aaa;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled:focus{outline:0;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(50,100,150,.4)}.swal2-popup .swal2-styled::-moz-focus-inner{border:0}.swal2-popup .swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-popup .swal2-image{max-width:100%;margin:1.25em auto}.swal2-popup .swal2-close{position:absolute;top:0;right:0;justify-content:center;width:1.2em;height:1.2em;padding:0;transition:color .1s ease-out;border:none;border-radius:0;outline:initial;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer;overflow:hidden}.swal2-popup .swal2-close:hover{-webkit-transform:none;transform:none;color:#f27474}.swal2-popup>.swal2-checkbox,.swal2-popup>.swal2-file,.swal2-popup>.swal2-input,.swal2-popup>.swal2-radio,.swal2-popup>.swal2-select,.swal2-popup>.swal2-textarea{display:none}.swal2-popup .swal2-content{justify-content:center;margin:0;padding:0;color:#545454;font-size:1.125em;font-weight:300;line-height:normal;z-index:1;word-wrap:break-word}.swal2-popup #swal2-content{text-align:center}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-radio,.swal2-popup .swal2-select,.swal2-popup .swal2-textarea{margin:1em auto}.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-textarea{width:100%;transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;font-size:1.125em;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);box-sizing:border-box}.swal2-popup .swal2-file.swal2-inputerror,.swal2-popup .swal2-input.swal2-inputerror,.swal2-popup .swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-popup .swal2-file:focus,.swal2-popup .swal2-input:focus,.swal2-popup .swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 3px #c4e6f5}.swal2-popup .swal2-file::-webkit-input-placeholder,.swal2-popup .swal2-input::-webkit-input-placeholder,.swal2-popup .swal2-textarea::-webkit-input-placeholder{color:#ccc}.swal2-popup .swal2-file:-ms-input-placeholder,.swal2-popup .swal2-input:-ms-input-placeholder,.swal2-popup .swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-popup .swal2-file::-ms-input-placeholder,.swal2-popup .swal2-input::-ms-input-placeholder,.swal2-popup .swal2-textarea::-ms-input-placeholder{color:#ccc}.swal2-popup .swal2-file::placeholder,.swal2-popup .swal2-input::placeholder,.swal2-popup .swal2-textarea::placeholder{color:#ccc}.swal2-popup .swal2-range input{width:80%}.swal2-popup .swal2-range output{width:20%;font-weight:600;text-align:center}.swal2-popup .swal2-range input,.swal2-popup .swal2-range output{height:2.625em;margin:1em auto;padding:0;font-size:1.125em;line-height:2.625em}.swal2-popup .swal2-input{height:2.625em;padding:0 .75em}.swal2-popup .swal2-input[type=number]{max-width:10em}.swal2-popup .swal2-file{font-size:1.125em}.swal2-popup .swal2-textarea{height:6.75em;padding:.75em}.swal2-popup .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;color:#545454;font-size:1.125em}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-radio{align-items:center;justify-content:center}.swal2-popup .swal2-checkbox label,.swal2-popup .swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-popup .swal2-checkbox input,.swal2-popup .swal2-radio input{margin:0 .4em}.swal2-popup .swal2-validation-message{display:none;align-items:center;justify-content:center;padding:.625em;background:#f0f0f0;color:#666;font-size:1em;font-weight:300;overflow:hidden}.swal2-popup .swal2-validation-message::before{display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center;content:'!';zoom:normal}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-moz-document url-prefix(){.swal2-close:focus{outline:2px solid rgba(50,100,150,.4)}}.swal2-icon{position:relative;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;border:.25em solid transparent;border-radius:50%;line-height:5em;cursor:default;box-sizing:content-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;zoom:normal}.swal2-icon-text{font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-success{border-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:3.75em 3.75em;transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 3.75em;transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;top:-.25em;left:-.25em;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%;z-index:2;box-sizing:content-box}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;top:.5em;left:1.625em;width:.4375em;height:5.625em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);z-index:1}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;height:.3125em;border-radius:.125em;background-color:#a5dc86;z-index:2}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.875em;width:1.5625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-progresssteps{align-items:center;margin:0 0 1.25em;padding:0;font-weight:600}.swal2-progresssteps li{display:inline-block;position:relative}.swal2-progresssteps .swal2-progresscircle{width:2em;height:2em;border-radius:2em;background:#3085d6;color:#fff;line-height:2em;text-align:center;z-index:20}.swal2-progresssteps .swal2-progresscircle:first-child{margin-left:0}.swal2-progresssteps .swal2-progresscircle:last-child{margin-right:0}.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep{background:#3085d6}.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep~.swal2-progresscircle{background:#add8e6}.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep~.swal2-progressline{background:#add8e6}.swal2-progresssteps .swal2-progressline{width:2.5em;height:.4em;margin:0 -1px;background:#3085d6;z-index:10}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-show.swal2-noanimation{-webkit-animation:none;animation:none}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-hide.swal2-noanimation{-webkit-animation:none;animation:none}.swal2-rtl .swal2-close{right:auto;left:0}.swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-animate-success-icon .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-animate-error-icon{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-animate-error-icon .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}@-webkit-keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:initial!important}}</style><link href="chrome-extension://cjdnfmjmdligcpfcekfmenlhiopehjkd/web_resources/modal/modal.css" rel="stylesheet" id="__tmpStyle"><style>
+      .ejoy-sub-active{
+        color: #1296ba !important;
+      }
+      
+      .ejoy-sub-hovered{
+        color: #1296ba !important;
+      }
+      .ejoy-sub-clzz{
+        cursor: pointer;
+        
+        lineHeight: 1.2;
+          font-size: 28px;
+          color: #FFCC00; background: rgba(17, 17, 17, 0.7);
+        
+      }
+      .ejoy-sub-clzz:hover{
+        color: #1296ba !important;
+      }
+      .ej-trans-sub{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999999;
+        cursor: move;
+      }
+      .ej-trans-sub > span{
+        color: #3CF9ED;
+        font-size: 18px;
+        text-align: center;
+        padding: 0 16px;
+        line-height: 1.5;
+        background: rgba(32, 26, 25, 0.8);
+        // text-shadow: 0px 1px 4px black;
+        padding: 0 8px;
+        
+        lineHeight: 1.2;
+        font-size: 16px;
+        color: #0CB1C7; background: rgba(67, 65, 65, 0.7);
+      
+      }
+      .ej-main-sub{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999999;
+        cursor: move;
+        padding: 0 8px;
+      }
+      .ej-main-sub > span{
+        color: white;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        background: rgba(32, 26, 25, 0.8);
+        // text-shadow: 0px 1px 4px black;
+        padding: 2px 8px;
+        
+        lineHeight: 1.2;
+          font-size: 28px;
+          color: #FFCC00; background: rgba(17, 17, 17, 0.7);
+        
+      }
+
+      .ej-main-sub .ejoy-sub-clzz{
+        background: transparent !important
+      }
+
+      .tran-subtitle > span{
+        cursor: pointer;
+        padding-left: 10px;
+        top: 2px;
+        position: relative;
+      }
+
+      .tran-subtitle > span > span{
+        position: absolute;
+        top: -170%;
+        background: rgba(0,0,0,0.5);
+        font-size: 13px;
+        line-height: 20px;
+        padding: 2px 8px;
+        color: white;
+        display: none;
+        border-radius: 4px;
+        white-space: nowrap;
+        left: -50%;
+        font-weight: normal;
+      }
+
+      .view-icon-copy-main-sub:hover > span, .view-icon-edit-sub:hover > span, .view-icon-copy-tran-sub:hover > span {
+        display: block;
+      }
+
+      .tran-subtitle > span > svg{
+        width: 16px;
+        height: 16px;
+        pointer-events: none;
+        display: inline-flex !important;
+        vertical-align: baseline !important;
+      }
+      
+      .view-icon-copy-main-sub > svg{
+        pointer-events: none;
+        color: #FFCC00
+      }
+
+      .view-icon-copy-tran-sub{
+        padding-left: 0 !important;
+        padding-right: 8px !important;
+      }
+      .view-icon-copy-tran-sub > svg{
+        pointer-events: none;
+        color: #0CB1C7
+      }
+
+
+      </style></head>
+<body id="Body"><nav id="menu-responsive" class="mm-menu mm-horizontal mm-ismenu"><ul class="mm-list mm-panel mm-opened mm-current" id="mm-m0-p0"><li><a href="http://dut.udn.vn/KhoaCNTT">Home</a></li><li><a class="mm-subopen" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p1"></a><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Giới thiệu</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/2026">Tuyển sinh</a></li><li><a class="mm-subopen" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p2"></a><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Đào tạo</a></li><li><a class="mm-subopen" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p5"></a><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Nghiên cứu khoa học</a></li><li><a class="mm-subopen" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p6"></a><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Hợp tác</a></li><li><a class="mm-subopen" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p7"></a><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Sinh viên</a></li><li><a class="mm-subopen" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p9"></a><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Cựu sinh viên</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1484">Liên hệ</a></li><li><a class="mm-subopen" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p10"></a><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Khoa</a></li><li><a class="mm-subopen" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p11"></a><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Phòng</a></li></ul><ul class="mm-list mm-panel" id="mm-m0-p1"><li class="mm-subtitle"><a class="mm-subclose" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p0">Giới thiệu</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1457">Tầm nhìn và Sứ mạng</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1458">Kế hoạch chiến lược phát triển</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1459">Giới thiệu chung</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1460">Cơ cấu tổ chức</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1461">Bộ môn Công nghệ phần mềm</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1463">Bộ môn Mạng và Truyền thông</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/2006">Bộ môn Hệ thống nhúng</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1464">Đội ngũ cán bộ</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1465">Cơ sở vật chất</a></li></ul><ul class="mm-list mm-panel" id="mm-m0-p2"><li class="mm-subtitle"><a class="mm-subclose" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p0">Đào tạo</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1466">Mô hình đào tạo</a></li><li><a class="mm-subopen" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p3"></a><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Đào tạo đại học</a></li><li><a class="mm-subopen" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p4"></a><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Đào tạo sau đại học</a></li></ul><ul class="mm-list mm-panel" id="mm-m0-p3"><li class="mm-subtitle"><a class="mm-subclose" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p2">Đào tạo đại học</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1467">Kỹ sư CNTT</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1468">Kỹ sư CLC CNTT tiếng Anh</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1469">Kỹ sư CLC CNTT chuẩn Nhật Bản</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1470">Kỹ sư CLC PFIEV CNTT</a></li></ul><ul class="mm-list mm-panel" id="mm-m0-p4"><li class="mm-subtitle"><a class="mm-subclose" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p2">Đào tạo sau đại học</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1471">Thạc sĩ Khoa học máy tính</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1472">Đào tạo tiến sĩ</a></li></ul><ul class="mm-list mm-panel" id="mm-m0-p5"><li class="mm-subtitle"><a class="mm-subclose" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p0">Nghiên cứu khoa học</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1473">Các hướng nghiên cứu</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/2005">Bài báo khoa học</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/2007">Công trình nghiên cứu</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1476">Lý lịch khoa học</a></li></ul><ul class="mm-list mm-panel" id="mm-m0-p6"><li class="mm-subtitle"><a class="mm-subclose" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p0">Hợp tác</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1477">Hợp tác nhà trường</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1478">Hợp tác doanh nghiệp</a></li></ul><ul class="mm-list mm-panel" id="mm-m0-p7"><li class="mm-subtitle"><a class="mm-subclose" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p0">Sinh viên</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/2034">Sổ tay sinh viên</a></li><li><a class="mm-subopen" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p8"></a><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Khảo sát việc làm</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1481">Đoàn thanh niên</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1483">Nhóm hy vọng</a></li></ul><ul class="mm-list mm-panel" id="mm-m0-p8"><li class="mm-subtitle"><a class="mm-subclose" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p7">Khảo sát việc làm</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1479">Sinh viên tốt nghiệp năm 2016</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1480">Sinh viên tốt nghiệp năm 2015</a></li></ul><ul class="mm-list mm-panel" id="mm-m0-p9"><li class="mm-subtitle"><a class="mm-subclose" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p0">Cựu sinh viên</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1601">Danh sách Cựu sinh viên đại học</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1632">Danh sách Cựu học viên cao học</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1633">Danh sách Cựu nghiên cứu sinh</a></li></ul><ul class="mm-list mm-panel" id="mm-m0-p10"><li class="mm-subtitle"><a class="mm-subclose" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p0">Khoa</a></li><li><a href="http://dut.udn.vn/KhoaNhietDL" target="_blank">Công nghệ Nhiệt - Điện lạnh</a></li><li><a href="http://www.dut.udn.vn/KhoaCNTT" target="_blank">Công nghệ Thông tin</a></li><li><a href="http://cokhi.dut.udn.vn/" target="_blank">Cơ khí</a></li><li><a href="http://dut.udn.vn/KhoaCKGT" target="_blank">Cơ khí Giao thông</a></li><li><a href="http://dien.dut.udn.vn/" target="_blank">Điện</a></li><li><a href="http://ete.dut.udn.vn/" target="_blank">Điện tử - Viễn thông</a></li><li><a href="http://www.dut.udn.vn/KhoaHoa" target="_blank">Hóa</a></li><li><a href="http://dut.udn.vn/KhoaKientruc" target="_blank">Kiến trúc</a></li><li><a href="http://moitruong.dut.udn.vn/" target="_blank">Môi trường</a></li><li><a href="http://fpm.dut.udn.vn/trang-chu" target="_blank">Quản lý Dự án</a></li><li><a href="http://cauduongbkdn.dut.udn.vn/" target="_blank">Xây dựng Cầu - Đường</a></li><li><a href="http://dut.udn.vn/wref" target="_blank">Xây dựng Công trình Thủy</a></li><li><a href="http://dut.udn.vn/ce" target="_blank">Xây dựng Dân dụng &amp; Công nghiệp</a></li></ul><ul class="mm-list mm-panel" id="mm-m0-p11"><li class="mm-subtitle"><a class="mm-subclose" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#mm-m0-p0">Phòng</a></li><li><a href="http://dut.udn.vn/Phong/CTSV">Công tác sinh viên</a></li><li><a href="http://dut.udn.vn/Phong/Vatchat">Cơ sở vật chất</a></li><li><a href="http://dut.udn.vn/Phong/Daotao">Đào tạo</a></li><li><a href="http://dut.udn.vn/Phong/Taichinh">Kế hoạch - Tài chính</a></li><li><a href="http://dut.udn.vn/Phong/QualityAssurance">Khảo thí &amp; Đảm bảo chất lượng giáo dục</a></li><li><a href="http://dut.udn.vn/Phong/Khoahoc">Khoa học công nghệ &amp; Hợp tác quốc tế</a></li><li><a href="https://dut.udn.vn/Phong/Tochuc">Tổ chức - Hành chính </a></li><li><a href="http://dut.udn.vn/Phong/Thanhtra">Thanh tra - Pháp chế</a></li></ul></nav>
+    
+    <form method="post" action="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value="">
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value=";;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35:en:9ddf364d-d65d-4f01-a69e-8b015049e026:ea597d4b:b25378d2">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form'];
+if (!theForm) {
+    theForm = document.Form;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/Telerik.Web.UI.WebResource.axd" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="Ysm89ftzclYzS02BOJ/89nvkvE7SjWgzKrgGmb/FpEC1kBbYmnSJlq2noPqe4KubCO3x10wSawHO9R2jWB6C54d3nSRJDj34VVgsxCOyGwU2ekMi">
+</div><script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/dnn.modalpopup.js" type="text/javascript"></script><script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/dnncore.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        
+        
+        
+
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery.dd.min.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery.magnific-popup.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/modernizr.custom.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/HorizontalMenu.min.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery.flexslider-min.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery.easytabs.min.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery.mmenu.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery.carouFredSel.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery.mousewheel.min.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery.touchSwipe.min.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery.transit.min.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/jquery.ba-throttle-debounce.min.js" type="text/javascript"></script>
+<script src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/common.js" type="text/javascript"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="dnn_ContentPane"><div class="DnnModule DnnModule-DNN_HTML DnnModule-1927"><a name="1927"></a>
+
+<div class="DNNContainer_noTitle">
+	<div id="dnn_ctr1927_ContentPane"><!-- Start_Module_1927 --><div id="dnn_ctr1927_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr1927_HtmlModule_lblContent" class="Normal">
+	
+</div>
+
+</div><!-- End_Module_1927 --></div>
+	<div class="clear"></div>
+</div>
+
+
+
+
+
+
+</div></div>
+<div class="wd-wapper">
+    <div id="dnn_BannerContentPanel">
+    <div class="DnnModule DnnModule-BKBanner2 DnnModule-1928"><a name="1928"></a>
+
+<div class="DNNContainer_noTitle">
+	<div id="dnn_ctr1928_ContentPane"><!-- Start_Module_1928 --><div id="dnn_ctr1928_ModuleContent" class="DNNModuleContent ModBKBanner2C">
+	
+
+<div class="wd-head-container">
+    <div class="wd-center">
+        <div class="wd-top-header">
+            <div class="wd-top-left">
+                <ul class="wd-list-menu-l">
+                    <li class="first"><a href="http://dut.udn.vn/Tintuc/Tintucds/gid/all">Tin tức &amp; Sự kiện</a></li>
+                    <li><a href="http://dut.udn.vn/Tintuc/Thongbaods/gid/all">Thông báo</a></li>
+					<li><a href="http://dut.udn.vn/VanbanPhapquy">Văn bản</a></li>
+                    <li><a href="http://dut.udn.vn/Lichtuan">Lịch tuần</a></li>
+                    <li><a href="http://dut.udn.vn/Danhba">Danh bạ</a></li>
+                    <li><a href="http://dut.udn.vn/Tintuc/Gioithieu/id/1012">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="wd-top-right">
+                <div class="wd-component wd-languageNormal">
+                    <div class="wd-select-language">
+                        <a href="http://dut.udn.vn/KhoaCNTT/TintucDsEN">
+                            <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/flag-english.png">
+                        </a>
+                        <span style="color: #fff; padding-left: 5px;">English</span>
+                    </div>
+                </div>
+                <span id="dnn_ctr1928_View_lblMenuTop"><ul class="wd-list-menu-r"><ul class="wd-list-menu-r"><li><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Khoa</a><ul class="wd-content-list-category-menu" style="display: none;"><div class="wd-arrow"></div><li><a href="http://dut.udn.vn/KhoaNhietDL" target="_blank">Công nghệ Nhiệt - Điện lạnh</a></li><li><a href="http://www.dut.udn.vn/KhoaCNTT" target="_blank">Công nghệ Thông tin</a></li><li><a href="http://cokhi.dut.udn.vn/" target="_blank">Cơ khí</a></li><li><a href="http://dut.udn.vn/KhoaCKGT" target="_blank">Cơ khí Giao thông</a></li><li><a href="http://dien.dut.udn.vn/" target="_blank">Điện</a></li><li><a href="http://ete.dut.udn.vn/" target="_blank">Điện tử - Viễn thông</a></li><li><a href="http://www.dut.udn.vn/KhoaHoa" target="_blank">Hóa</a></li><li><a href="http://dut.udn.vn/KhoaKientruc" target="_blank">Kiến trúc</a></li><li><a href="http://moitruong.dut.udn.vn/" target="_blank">Môi trường</a></li><li><a href="http://fpm.dut.udn.vn/trang-chu" target="_blank">Quản lý Dự án</a></li><li><a href="http://cauduongbkdn.dut.udn.vn/" target="_blank">Xây dựng Cầu - Đường</a></li><li><a href="http://dut.udn.vn/wref" target="_blank">Xây dựng Công trình Thủy</a></li><li><a href="http://dut.udn.vn/ce" target="_blank">Xây dựng Dân dụng &amp; Công nghiệp</a></li></ul></li><li><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Phòng</a><ul class="wd-content-list-category-menu" style="display: none;"><div class="wd-arrow"></div><li><a href="http://dut.udn.vn/Phong/CTSV">Công tác sinh viên</a></li><li><a href="http://dut.udn.vn/Phong/Vatchat">Cơ sở vật chất</a></li><li><a href="http://dut.udn.vn/Phong/Daotao">Đào tạo</a></li><li><a href="http://dut.udn.vn/Phong/Taichinh">Kế hoạch - Tài chính</a></li><li><a href="http://dut.udn.vn/Phong/QualityAssurance">Khảo thí &amp; Đảm bảo chất lượng giáo dục</a></li><li><a href="http://dut.udn.vn/Phong/Khoahoc">Khoa học công nghệ &amp; Hợp tác quốc tế</a></li><li><a href="https://dut.udn.vn/Phong/Tochuc">Tổ chức - Hành chính </a></li><li><a href="http://dut.udn.vn/Phong/Thanhtra">Thanh tra - Pháp chế</a></li></ul></li></ul></ul></span></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="wd-center">
+            <div class="wd-header-content">
+                <div class="wd-content">
+                    <h1>
+                        <a class="wd-logo" href="http://dut.udn.vn/KhoaCNTT">
+                            <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/logo-k_cntt.png" alt="DHBK"></a>
+                        <a class="wd-logo-small" href="http://dut.udn.vn/">
+                            <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/logo-small.png" alt="DHBK"></a>
+                    </h1>
+                    <div class="wd-content-right">
+                        <fieldset class="wd-form-search">
+                            <div class="wd-input">
+                                <input class="txt-search" type="text" placeholder="Tìm kiếm thông tin">
+                                <input class="btn-search" type="submit" value="">
+                            </div>
+                        </fieldset>
+                        <div class="clear"></div>                        
+		                <div id="page" class="menuMobile" style="display: block;">
+			                <span id="dnn_ctr1928_View_lblMenuMobile"><div class="wd-menu-responsive"><a class="wd-menu-btn" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186#menu-responsive"></a></div></span>
+		                </div>						
+                    </div>
+					<div class="wd-navigation" style="float:left; padding: 10px 0px; width: 100%">
+						<span id="dnn_ctr1928_View_lblMenu"><div id="cbp-hrmenu" class="menu"><ul><li><a href="http://dut.udn.vn/KhoaCNTT">Home</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Giới thiệu</a><ul><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1457">Tầm nhìn và Sứ mạng</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1458">Kế hoạch chiến lược phát triển</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1459">Giới thiệu chung</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1460">Cơ cấu tổ chức</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1461">Bộ môn Công nghệ phần mềm</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1463">Bộ môn Mạng và Truyền thông</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/2006">Bộ môn Hệ thống nhúng</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1464">Đội ngũ cán bộ</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1465">Cơ sở vật chất</a></li></ul></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/2026">Tuyển sinh</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Đào tạo</a><ul><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1466">Mô hình đào tạo</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Đào tạo đại học</a><ul><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1467">Kỹ sư CNTT</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1468">Kỹ sư CLC CNTT tiếng Anh</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1469">Kỹ sư CLC CNTT chuẩn Nhật Bản</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1470">Kỹ sư CLC PFIEV CNTT</a></li></ul></li><li><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Đào tạo sau đại học</a><ul><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1471">Thạc sĩ Khoa học máy tính</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1472">Đào tạo tiến sĩ</a></li></ul></li></ul></li><li><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Nghiên cứu khoa học</a><ul><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1473">Các hướng nghiên cứu</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/2005">Bài báo khoa học</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/2007">Công trình nghiên cứu</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1476">Lý lịch khoa học</a></li></ul></li><li><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Hợp tác</a><ul><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1477">Hợp tác nhà trường</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1478">Hợp tác doanh nghiệp</a></li></ul></li><li><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Sinh viên</a><ul><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/2034">Sổ tay sinh viên</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Khảo sát việc làm</a><ul><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1479">Sinh viên tốt nghiệp năm 2016</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1480">Sinh viên tốt nghiệp năm 2015</a></li></ul></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1481">Đoàn thanh niên</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1483">Nhóm hy vọng</a></li></ul></li><li><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Cựu sinh viên</a><ul><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1601">Danh sách Cựu sinh viên đại học</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1632">Danh sách Cựu học viên cao học</a></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1633">Danh sách Cựu nghiên cứu sinh</a></li></ul></li><li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1484">Liên hệ</a></li></ul></div></span>
+					</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="wd-center">
+            <div style="margin-top: 0px; margin-bottom: 0px">
+                <span id="dnn_ctr1928_View_lblMenuNav"><ul class="wd - breadcrumb"><li><a class="wd-fist-link" href="http://dut.udn.vn/">Trang chủ</a></li><li><a href="http://dut.udn.vn/KhoaCNTT">Khoa Công nghệ thông tin</a></li></ul></span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div><!-- End_Module_1928 --></div>
+	<div class="clear"></div>
+</div>
+
+
+
+
+
+
+</div></div>
+
+<div class="wd-center">
+    <div class="row">
+        <div id="dnn_LeftContentPanel" class="col-sm-3">
+        <div class="DnnModule DnnModule-BKMenuLeft DnnModule-1930"><a name="1930"></a>
+
+<div class="DNNContainer_noTitle">
+	<div id="dnn_ctr1930_ContentPane"><!-- Start_Module_1930 --><div id="dnn_ctr1930_ModuleContent" class="DNNModuleContent ModBKMenuLeftC">
+	<span id="dnn_ctr1930_View_lblGroup"><p class="wd-title-nav">K. CÔNG NGHỆ THÔNG TIN</p><div class="wd-left-accordion"><a class="" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/187">Thông báo</a><a class=" wd-active" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Tin tức hoạt động</a><a class="" href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1467">Đào tạo đại học</a><a class="" href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1471">Đào tạo sau đại học</a><a class="" href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/1473">Nghiên cứu khoa học</a><a class="" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Biểu mẫu của Khoa</a><h3 class="sub-title-accordion">Góp ý với Khoa<span class="arrow"></span></h3><div class="sub-link"><a class="" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Về chuẩn đầu ra CTĐT</a><a class="last" href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Về Chương trình đào tạo</a></div></div></span>
+</div><!-- End_Module_1930 --></div>
+	<div class="clear"></div>
+</div>
+
+
+
+
+
+
+</div></div>        
+        <div id="dnn_RightContentPanel" class="col-sm-9">
+        <div class="DnnModule DnnModule-BKTintucDs DnnModule-1931"><a name="1931"></a>
+
+<div class="DNNContainer_noTitle">
+	<div id="dnn_ctr1931_ContentPane"><!-- Start_Module_1931 --><div id="dnn_ctr1931_ModuleContent" class="DNNModuleContent ModBKTintucDsC">
+	
+
+<div class="wd-list-content">
+    <h3 class="wd-left-title-block">
+        <span id="dnn_ctr1931_View_lblTieude">Khoa CNTT - Tin tức</span>
+    </h3>
+    <ul class="wd-list-report">
+        
+        <li>
+            <div class="media">
+                <a class="pull-left" href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7484">
+                    
+                    <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/image000.jpg" alt="" width="130px">
+                    
+                </a>
+                <div class="media-body">
+                    <h3 class="media-heading">
+                        <a href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7484">Lễ vinh danh Đại sứ TOEIC Việt Nam tháng 6.2022 cho sinh viên Trường Đại học Bách khoa</a>
+                        
+                    </h3>
+                    <div class="date">30/07/2022 12:47</div>
+                    <div class="clear"></div>
+                    <p>Sáng ngày 29/7/2022, tại phòng khách A, Trường Đại học Bách khoa, ĐHĐN đã diễn ra lễ vinh danh Đại sứ TOEIC Việt Nam tháng 6/2022 cho sinh viên Trường Đại học Bách khoa.</p>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div class="media">
+                <a class="pull-left" href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7347">
+                    
+                    <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/Tan-TS-Khoa-hoc-may-tinh-nhan-bang-tot-nghiep-1920x1275.jpg" alt="" width="130px">
+                    
+                </a>
+                <div class="media-body">
+                    <h3 class="media-heading">
+                        <a href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7347">Đại học Bách khoa – Đại học Đà Nẵng; phát triển theo định hướng đại học nghiên cứu vào năm 2035</a>
+                        
+                    </h3>
+                    <div class="date">01/06/2022 04:02</div>
+                    <div class="clear"></div>
+                    <p>Trong đợt này, có 7 Tiến sĩ thuộc các ngành Khoa học máy tính (3), Cơ kỹ thuật (2), Công nghệ sinh học, Công nghệ thực phẩm (mỗi ngành có Tiến sỹ); 37 Thạc sỹ và 1.610 kỹ sư, cử nhân, kiến trúc sư được công nhận tốt nghiệp đợt cuối học kỳ 1 năm học 2020-2021, chính thức nhận bằng tốt nghiệp.</p>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div class="media">
+                <a class="pull-left" href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7320">
+                    
+                    <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/54321.jpg" alt="" width="130px">
+                    
+                </a>
+                <div class="media-body">
+                    <h3 class="media-heading">
+                        <a href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7320">“25 năm khai sinh 7 khoa CNTT đầu tiên” - dấu mốc lịch sử Ngành CNTT Việt Nam</a>
+                        
+                    </h3>
+                    <div class="date">25/05/2022 16:02</div>
+                    <div class="clear"></div>
+                    <p>Kỷ niệm 25 năm 7 khoa CNTT trọng điểm Tại Việt Nam được GS.TS Nguyễn Thúc Hải chia sẻ, đã khơi lại rất nhiều kỷ niệm và với rất nhiều ý kiến của những người đam mê, cống hiến và luôn dõi theo với tình yêu dành trọn cho Ngành CNTT trên khắp đất nước!</p>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div class="media">
+                <a class="pull-left" href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7285">
+                    
+                    <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/image000(1).jpg" alt="" width="130px">
+                    
+                </a>
+                <div class="media-body">
+                    <h3 class="media-heading">
+                        <a href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7285">Khai giảng và phổ biến quy chế cho Nghiên cứu sinh trúng tuyển đợt tháng 12/2021 và tháng 4/2022</a>
+                        
+                    </h3>
+                    <div class="date">23/05/2022 13:11</div>
+                    <div class="clear"></div>
+                    <p>Sáng ngày 21/05/2022, Trường Đại học Bách khoa, ĐHĐN đã tổ chức Khai giảng và phổ biến quy chế cho Nghiên cứu sinh (NCS) trúng tuyển đợt tháng 12/2021 và tháng 04/2022 tại Phòng khách khu A.</p>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div class="media">
+                <a class="pull-left" href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7195">
+                    
+                    <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/image000(2).jpg" alt="" width="130px">
+                    
+                </a>
+                <div class="media-body">
+                    <h3 class="media-heading">
+                        <a href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7195">NCS Huỳnh Triệu Vỹ bảo vệ thành công Luận án Tiến sĩ cấp cơ sở chuyên ngành Khoa học máy tính</a>
+                        
+                    </h3>
+                    <div class="date">18/05/2022 08:12</div>
+                    <div class="clear"></div>
+                    <p>Sáng ngày 14/5/2022, Trường Đại học Bách khoa - Đại học Đà Nẵng đã tổ chức buổi bảo vệ Luận án Tiến sĩ cấp cơ&nbsp;sở&nbsp;của Nghiên cứu sinh (NCS) Huỳnh Triệu Vỹ, chuyên ngành Khoa học máy tính, với đề tài: “Khai phá tri thức theo hướng tiếp cận Lý thuyết Giàn”, dưới sự hướng dẫn của TS. Trương Ngọc Châu và TS. Lê Quốc Hải.</p>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div class="media">
+                <a class="pull-left" href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7103">
+                    
+                    <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/DSC_0121-1024x680.jpg" alt="" width="130px">
+                    
+                </a>
+                <div class="media-body">
+                    <h3 class="media-heading">
+                        <a href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7103">Chất lượng đào tạo nguồn nhân lực IT, góc nhìn từ sự hội tụ và tan tỏa</a>
+                        
+                    </h3>
+                    <div class="date">25/04/2022 15:07</div>
+                    <div class="clear"></div>
+                    <p>(DSA) – Thành công của ngày “Giao lưu Doanh nghiệp và Sinh viên Công nghệ thông tin”, diễn ra hôm 16/4/2022 vừa qua, cho thấy, ngày càng có nhiều mô hình “lan tỏa và hội tụ” giữa Nhà trường – Chuyên gia (đến từ các doanh nghiệp), chung tay đồng hành, nâng cao chất lượng đào tạo nguồn nhân lực.</p>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div class="media">
+                <a class="pull-left" href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7085">
+                    
+                    <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/image000(3).jpg" alt="" width="130px">
+                    
+                </a>
+                <div class="media-body">
+                    <h3 class="media-heading">
+                        <a href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7085">Ngày hội việc làm “IT JOB FAIR 2022” thu hút hơn 300 sinh viên IT tham gia</a>
+                        
+                    </h3>
+                    <div class="date">18/04/2022 08:07</div>
+                    <div class="clear"></div>
+                    <p>Sáng ngày 16/04/2022, Khoa Công nghệ thông tin tổ chức Ngày hội việc làm “IT JOB FAIR 2022” tại Trung tâm Học liệu và Truyền thông, Trường Đại học Bách khoa, ĐH Đà Nẵng. Ngày hội năm nay có sự góp mặt của 13 doanh nghiệp lớn có nhu cầu tuyển dụng nhân sự về lĩnh vực IT, thu hút hơn 300 sinh viên IT năm cuối tham gia.</p>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div class="media">
+                <a class="pull-left" href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7070">
+                    
+                    <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/image000(4).jpg" alt="" width="130px">
+                    
+                </a>
+                <div class="media-body">
+                    <h3 class="media-heading">
+                        <a href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7070">Vinh danh, khen thưởng thành tích xuất sắc đội tuyển dự thi OLP tin học lần thứ 30 và Lập trình quốc tế ICPC Asia Hà Nội 2021</a>
+                        
+                    </h3>
+                    <div class="date">07/04/2022 08:19</div>
+                    <div class="clear"></div>
+                    <p>Sáng ngày 5/4/2022, tại phòng họp khu A, Trường Đại học Bách khoa, ĐHĐN đã diễn ra Lễ tuyên dương, khen thưởng những thành tích xuất sắc của giảng viên và sinh viên tham dự kỳ thi OLP Tin học lần thứ 30 và Lập trình quốc tế ICPC HaNoi Asia 2021.</p>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div class="media">
+                <a class="pull-left" href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7061">
+                    
+                    <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/Đại-học-Bách-khoa-_-Khên-thưởng-thành-tích-ICPC-và-OLP-2021_0341-300x150.jpg" alt="" width="130px">
+                    
+                </a>
+                <div class="media-body">
+                    <h3 class="media-heading">
+                        <a href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7061">Đại học Bách khoa-Đại học Đà Nẵng khen thưởng thành tích cao của đội tuyển tại ICPC và OLP Tin học toàn quốc 2021</a>
+                        
+                    </h3>
+                    <div class="date">05/04/2022 16:32</div>
+                    <div class="clear"></div>
+                    <p>(DSA) – Phát biểu tại buổi vinh danh và khen thưởng thành tích, PGS.TS Đoàn Quang Vinh – Hiệu trưởng trường Đại học Bách khoa, Đại học Đà Nẵng nhấn mạnh “Thành tích của các em đã góp phần gìn giữ truyền thống vẻ vang của học hiệu; là minh chứng cho chất lượng đào tạo, trong đó không thể không nhắc đến quan điểm xuyên suốt của nhà trường trong tuyển sinh hàng chục năm qua, đó là coi trọng chất lượng ngay từ đầu vào.</p>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div class="media">
+                <a class="pull-left" href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7035">
+                    
+                    <img src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/image999.jpg" alt="" width="130px">
+                    
+                </a>
+                <div class="media-body">
+                    <h3 class="media-heading">
+                        <a href="http://dut.udn.vn/KhoaCNTT/Tintuc/id/7035">Sinh viên Trường Đại học Bách khoa, ĐHĐN giành được nhiều giải cao tại Kỳ thi OLP tin học lần thứ 30 và Lập trình quốc tế ICPC Asia Hà Nội 2021</a>
+                        
+                    </h3>
+                    <div class="date">26/03/2022 16:16</div>
+                    <div class="clear"></div>
+                    <p>Đội tuyển sinh viên Trường Đại học Bách khoa, Đại học Đà Nẵng (DUT) với 12 thành viên tham dự Kỳ thi Olympic Tin học sinh viên toàn quốc 2021 (OLP) và ICPC Asia HaNoi 2021 đã xuất sắc giành được 9 giải thưởng lớn ở nhiều hạng mục khác nhau.</p>
+                </div>
+            </div>
+        </li>
+        
+    </ul>
+    <span id="dnn_ctr1931_View_lblPager"><div class="wd-paging"><a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186/page/1" class="wd-current">1</a> <a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186/page/2">2</a> <a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186/page/3">3</a> <a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186/page/4">4</a> <a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186/page/5">5</a> <a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186/page/6">6</a> <a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186/page/2">&gt;</a> <a href="http://dut.udn.vn/KhoaCNTT/Tintucds/gid/186/page/10">&gt;&gt;</a></div></span>
+</div>
+
+</div><!-- End_Module_1931 --></div>
+	<div class="clear"></div>
+</div>
+
+
+
+
+
+
+</div></div>
+    </div>
+</div>
+<br>
+<div class="wd-wapper">
+    <div id="dnn_FooterContentPanel">
+    <div class="DnnModule DnnModule-BKFooter DnnModule-1929"><a name="1929"></a>
+
+<div class="DNNContainer_noTitle">
+	<div id="dnn_ctr1929_ContentPane"><!-- Start_Module_1929 --><div id="dnn_ctr1929_ModuleContent" class="DNNModuleContent ModBKFooterC">
+	
+
+<div class="wd-footer-container-home">
+    <div class="wd-center">
+        <div class="wd-top-footer">
+            <div class="wd-block-info-company">
+                <h3 class="wd-title-footer">Tuyển sinh &amp; đào tạo</h3>
+                <ul>
+                    <li><a href="http://dut.udn.vn/TuyenSinh2022">Thông tin tuyển sinh</a></li>
+                    <li><a href="http://dut.udn.vn/TrangDaoTao">Đào tạo đại học</a></li>
+                    <li><a href="http://dut.udn.vn/TrangDaoTaoSDH">Đào tạo sau đại học</a></li>
+                    <li><a href="http://dut.udn.vn/TrangDaotaoTX">Đào tạo thường xuyên</a></li>
+					<li><a href="http://dut.udn.vn/VanBanPhapQuy">Văn bản pháp quy</a></li>
+                </ul>
+            </div>
+            <div class="wd-block-info-company">
+                <h3 class="wd-title-footer">Các liên kết khác</h3>
+                <ul>
+                    <li><a href="http://lib.dut.udn.vn/" target="_blank">Thư viện</a></li>
+                    <li><a href="http://lms.dut.udn.vn/" target="_blank">E-Learning</a></li>
+                    <li><a href="https://login.microsoftonline.com/" target="_blank">Email</a></li>
+                    <li><a href="http://sv.dut.udn.vn/" target="_blank">Hệ thống thông tin sinh viên</a></li>
+                    <li><a href="http://cb.dut.udn.vn/" target="_blank">Hệ thống tác nghiệp</a></li>
+                </ul>
+            </div>
+            <div class="wd-block-info-company">
+                <h3 class="wd-title-footer">Kết nối</h3>
+                <ul class="wd-social">
+                    <li><a href="https://www.facebook.com/watch/bachkhoaDUT" target="_blank" title="Facebook"><span class="wd-icon-28 wd-icon-facebook"></span>Facebook</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCDEvOrrx6-cJfcMQGOHHysg" target="_blank" title="Youtube"><span class="wd-icon-28 wd-icon-youtube"></span>Youtube</a></li>
+                    <li><a href="https://twitter.com/Bachkhoa_Danang" target="_blank" title="Twitter"><span class="wd-icon-28 wd-icon-twitter"></span>Twitter</a></li>					
+                </ul>
+            </div>
+            <div class="wd-block-info-company last">
+                <h3 class="wd-title-footer">Lượt truy cập</h3>
+                <ul>
+                    <li>Tổng số lượt: <b>2.272.319</b></li>
+                    <li>Đang online: <b>31</b></li>
+                    <li>Webmaster: WebAdmin@dut.udn.vn</li>
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="wd-footer">
+            <p>© Bản quyền Trường Đại học Bách khoa - Đại học Đà Nẵng</p>
+        </div>
+    </div>
+</div>
+
+</div><!-- End_Module_1929 --></div>
+	<div class="clear"></div>
+</div>
+
+
+
+
+
+
+</div></div>
+</div>
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop">
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off">
+        
+    </form>
+    <!--CDF(Javascript|/js/dnncore.js?cdv=125)--><!--CDF(Javascript|/js/dnn.modalpopup.js?cdv=125)--><!--CDF(Css|/Resources/Shared/stylesheets/dnndefault/7.0.0/default.css?cdv=125)--><!--CDF(Css|/Portals/_default/skins/dhbk/skin.css?cdv=125)--><!--CDF(Css|/DesktopModules/BKBanner2/module.css?cdv=125)--><!--CDF(Css|/DesktopModules/BKBanner2/module.css?cdv=125)--><!--CDF(Css|/DesktopModules/BKFooter/module.css?cdv=125)--><!--CDF(Css|/DesktopModules/BKFooter/module.css?cdv=125)--><!--CDF(Css|/DesktopModules/BKMenuLeft/module.css?cdv=125)--><!--CDF(Css|/DesktopModules/BKMenuLeft/module.css?cdv=125)--><!--CDF(Css|/DesktopModules/BKTintucDs/module.css?cdv=125)--><!--CDF(Css|/DesktopModules/BKTintucDs/module.css?cdv=125)--><!--CDF(Css|/Portals/_default/admin.css?cdv=125)--><!--CDF(Javascript|/Resources/libraries/jQuery-UI/01_11_03/jquery-ui.js?cdv=125)--><!--CDF(Javascript|/Resources/libraries/jQuery/01_09_01/jquery.js?cdv=125)-->
+    
+
+<div id="mm-blocker"></div><div>
+    <div id="twoseven-ext-tab-media-modal" class="twoseven-ext-tab-media-modal" style="display: none;">
+      <!-- Modal content -->
+      <div class="twoseven-ext-tab-media-modal-content">
+        <div class="iframe-container" style="height: 100%; width: 100%;">
+          <span class="close">×</span>
+        </div>
+      </div>
+    </div></div><div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;" src="./Trường Đại học Bách khoa - Đại học Đà Nẵng _ KhoaCNTT _ TintucDs_files/saved_resource.html"></iframe></body></html>
